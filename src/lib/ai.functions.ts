@@ -81,12 +81,12 @@ Match the requested tone and audience precisely. Respect the requested length.`,
         },
         {
           role: "user",
-          content: `Purpose of the email: ${f.purpose}
-Audience: ${f.audience}
-Tone: ${f.tone}
-Desired length: ${f.length}
-Sender name/role: ${f.sender || "not provided"}
-Key points to include: ${f.points || "none supplied — infer sensible ones from the purpose"}`,
+          content: `Purpose of the email: ${f["purpose"]}
+Audience: ${f["audience"]}
+Tone: ${f["tone"]}
+Desired length: ${f["length"]}
+Sender name/role: ${f["sender"] || "not provided"}
+Key points to include: ${f["points"] || "none supplied — infer sensible ones from the purpose"}`,
         },
       ];
     case "notes":
@@ -113,13 +113,13 @@ Only use information present in the notes.`,
         },
         {
           role: "user",
-          content: `Meeting title: ${f.title || "Untitled meeting"}
-Meeting date: ${f.date || "not provided"}
-Attendees: ${f.attendees || "not provided"}
+          content: `Meeting title: ${f["title"] || "Untitled meeting"}
+Meeting date: ${f["date"] || "not provided"}
+Attendees: ${f["attendees"] || "not provided"}
 
 Raw notes / transcript:
 """
-${f.notes}
+${f["notes"]}
 """`,
         },
       ];
@@ -145,12 +145,12 @@ Bullets on risks, overload, or tasks worth delegating or dropping.`,
           role: "user",
           content: `Tasks (one per line, free-form):
 """
-${f.tasks}
+${f["tasks"]}
 """
-Time available: ${f.capacity}
-Planning period: ${f.period}
-Hard deadlines or fixed commitments: ${f.deadlines || "none given"}
-Working style preference: ${f.style || "balanced"}`,
+Time available: ${f["capacity"]}
+Planning period: ${f["period"]}
+Hard deadlines or fixed commitments: ${f["deadlines"] || "none given"}
+Working style preference: ${f["style"] || "balanced"}`,
         },
       ];
     case "research":
@@ -175,10 +175,10 @@ Be explicit about uncertainty. Do not fabricate statistics, citations or URLs.`,
         },
         {
           role: "user",
-          content: `Research topic or question: ${f.topic}
-Depth: ${f.depth}
-Perspective / role of the reader: ${f.audience || "general business professional"}
-Specific questions to answer: ${f.questions || "none — cover the essentials"}`,
+          content: `Research topic or question: ${f["topic"]}
+Depth: ${f["depth"]}
+Perspective / role of the reader: ${f["audience"] || "general business professional"}
+Specific questions to answer: ${f["questions"] || "none — cover the essentials"}`,
         },
       ];
     default:
