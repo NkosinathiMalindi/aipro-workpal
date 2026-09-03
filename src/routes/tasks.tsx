@@ -43,10 +43,10 @@ const STYLES = ["Balanced", "Knock out quick wins first", "Deep focus on big ite
 function TasksPage() {
   const { result, loading, error, submit } = useWorkflow("tasks");
   const [tasks, setTasks] = useState("");
-  const [period, setPeriod] = useState(PERIODS[2]);
-  const [capacity, setCapacity] = useState(CAPACITY[4]);
+  const [period, setPeriod] = useState(PERIODS[2]!);
+  const [capacity, setCapacity] = useState(CAPACITY[4]!);
   const [deadlines, setDeadlines] = useState("");
-  const [style, setStyle] = useState(STYLES[0]);
+  const [style, setStyle] = useState(STYLES[0]!);
 
   return (
     <AppShell>

@@ -43,9 +43,9 @@ const LENGTHS = ["Very short (2-3 sentences)", "Short (1 paragraph)", "Medium (2
 function EmailPage() {
   const { result, loading, error, submit } = useWorkflow("email");
   const [purpose, setPurpose] = useState("");
-  const [audience, setAudience] = useState(AUDIENCES[0]);
-  const [tone, setTone] = useState(TONES[1]);
-  const [length, setLength] = useState(LENGTHS[1]);
+  const [audience, setAudience] = useState(AUDIENCES[0]!);
+  const [tone, setTone] = useState(TONES[1]!);
+  const [length, setLength] = useState(LENGTHS[1]!);
   const [sender, setSender] = useState("");
   const [points, setPoints] = useState("");
 

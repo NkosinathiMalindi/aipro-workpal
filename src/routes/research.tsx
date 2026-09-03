@@ -41,7 +41,7 @@ const DEPTHS = ["Quick overview", "Balanced briefing", "In-depth analysis"];
 function ResearchPage() {
   const { result, loading, error, submit } = useWorkflow("research");
   const [topic, setTopic] = useState("");
-  const [depth, setDepth] = useState(DEPTHS[1]);
+  const [depth, setDepth] = useState(DEPTHS[1]!);
   const [audience, setAudience] = useState("");
   const [questions, setQuestions] = useState("");
 
